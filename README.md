@@ -1,2 +1,3 @@
 # IzzatYellowStatic
-IzzatYellowStatic is a my bot Created by @IzzatCORP Worked by Python
+IzzatYellowStatic is a basic bot Created by @IzzatCORP Worked by Python
+Moderation and more
