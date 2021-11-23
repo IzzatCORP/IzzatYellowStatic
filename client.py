@@ -86,4 +86,4 @@ async def info(ctx):
 
     await ctx.send(embed=embed)
 
-client.run('ODkzNjIzMjk5MjQ5MTY0MzI4.YVeJjQ.9mZ567idtFuHVbsvEy5F6_GpnkI')
+client.run('Your token lol')
