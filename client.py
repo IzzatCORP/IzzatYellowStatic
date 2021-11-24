@@ -25,14 +25,14 @@ async def ban(ctx, member: discord.Member, *, reason=None):
     else:
         if reason is None: # If the moderator did not enter any reason.
             # This command sends DM to the user about the BAN!
-            await member.send(f'Hi {member.name}! You have been banned from {ctx.channel.guild.name} \n \nReason: Not Specified')
+            await member.send(f'{member.name}! You have been banned from {ctx.channel.guild.name} \n \nReason: Not Specified')
             # This command sends message in the channel for confirming BAN!
             await ctx.channel.send(f'{member.name} has been banned')
             await member.ban() # Bans the member.
         
         else: # If the moderator entered a reason.
             # This command sends DM to the user about the BAN!
-            await member.send(f'Hi {member.name}! You have been banned from {ctx.channel.guild.name}. \n \nReason: {reason}')
+            await member.send(f'{member.name}! You have been banned from {ctx.channel.guild.name}. \n \nReason: {reason}')
             # This command sends message in the channel for confirming BAN!
             await ctx.channel.send(f'{member.name} has been banned')
             await member.ban() # Bans the member.
@@ -86,4 +86,22 @@ async def info(ctx):
 
     await ctx.send(embed=embed)
 
-client.run('Your token lol')
+@client.command()
+@commands.has_permissions(kick_members=True)
+async def warn(ctx,member : discord.Member,*,reason=None):
+    if member == ctx.author:
+        await ctx.send("You cannot warn yourself")
+    else:
+        if reason is None: 
+            
+            await member.send(f'{member.name}! You have been warned from {ctx.channel.guild.name} \n \nReason: Not Specified')
+            
+            await ctx.channel.send(f'{member.name} has been warned')
+
+        else: 
+            
+            await member.send(f'{member.name}! You have been warned from {ctx.channel.guild.name}. \n \nReason: {reason}')
+            
+            await ctx.channel.send(f'{member.name} has been warned')
+
+client.run('ODkzNjIzMjk5MjQ5MTY0MzI4.YVeJjQ.g3ODb6s0tw8nSb0PpmayTr0a2t8')
